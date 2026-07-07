@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Guru Optics — Logo Design Exploration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background: #FAFAFA;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 9999;
+        }
+        .logo-card { transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .logo-card:hover { transform: translateY(-6px); }
+        .logo-aura {
+            position: absolute; inset: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%);
+            border-radius: 50%; transform: scale(0.5); opacity: 0;
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: blur(40px); pointer-events: none;
+        }
+        .logo-card:hover .logo-aura { transform: scale(1); opacity: 1; }
+        .divider-line {
+            width: 0; height: 1px; background: currentColor; opacity: 0.2;
+            transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .logo-card:hover .divider-line { width: 100%; }
+        .logo-canvas { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .logo-card:hover .logo-canvas { transform: scale(1.05); }
+        .tracking-ultra-wide { letter-spacing: 0.2em; }
+        .text-balance { text-wrap: balance; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        /* ─── Variant 1: Concentric Vision ─── */
+        const LogoConcentric = ({ color }) => (
+            <svg viewBox="0 0 100 100" fill="none" stroke={color} style={{ width: '100%', height: '100%' }}>
+                <circle cx="50" cy="50" r="38" strokeWidth="2.5" />
+                <circle cx="50" cy="50" r="28" strokeWidth="2" opacity="0.8" />
+                <circle cx="50" cy="50" r="18" strokeWidth="1.5" opacity="0.6" />
+                <circle cx="50" cy="50" r="8" strokeWidth="1" opacity="0.4" />
+                <circle cx="50" cy="50" r="3.5" fill={color} stroke="none" />
+            </svg>
+        );
+
+        /* ─── Variant 2: Pixel Optics ─── */
+        const LogoPixel = ({ color }) => (
+            <svg viewBox="0 0 100 100" fill={color} style={{ width: '100%', height: '100%' }}>
+                {[24,32,40].map(x => [36,44,52,60].map(y => (
+                    <circle key={`l${x}${y}`} cx={x} cy={y} r="2.2" opacity={x === 40 && y === 52 ? 0.2 : 0.85} />
+                )))}
+                {[60,68,76].map(x => [36,44,52,60].map(y => (
+                    <circle key={`r${x}${y}`} cx={x} cy={y} r="2.2" opacity={x === 60 && y === 44 ? 0.2 : 0.85} />
+                )))}
+                <circle cx="48" cy="44" r="1.8" /><circle cx="52" cy="44" r="1.8" />
+                <circle cx="50" cy="52" r="3" fill={color} opacity="0.3" />
+            </svg>
+        );
+
+        /* ─── Variant 3: Radiance ─── */
+        const LogoRadiance = ({ color }) => (
+            <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+                <defs>
+                    <clipPath id="rc"><circle cx="50" cy="50" r="34" /></clipPath>
+                </defs>
+                <g clipPath="url(#rc)" stroke={color} strokeLinecap="round" fill="none">
+                    <line x1="50" y1="50" x2="50" y2="8" strokeWidth="3" />
+                    <line x1="50" y1="50" x2="50" y2="92" strokeWidth="3" />
+                    <line x1="50" y1="50" x2="8" y2="50" strokeWidth="3" />
+                    <line x1="50" y1="50" x2="92" y2="50" strokeWidth="3" />
+                    <line x1="50" y1="50" x2="20.3" y2="20.3" strokeWidth="2" />
+                    <line x1="50" y1="50" x2="79.7" y2="20.3" strokeWidth="2" />
+                    <line x1="50" y1="50" x2="20.3" y2="79.7" strokeWidth="2" />
+                    <line x1="50" y1="50" x2="79.7" y2="79.7" strokeWidth="2" />
+                </g>
+                <circle cx="50" cy="50" r="34" fill="none" stroke={color} strokeWidth="2.5" opacity="0.3" />
+                <circle cx="50" cy="50" r="4.5" fill={color} stroke="none" />
+            </svg>
+        );
+
+        /* ─── Variant 4: Spectacles Monogram SG ─── */
+        const LogoSG = ({ color }) => (
+            <svg viewBox="0 0 100 100" fill="none" stroke={color} style={{ width: '100%', height: '100%' }}>
+                {/* Left lens frame (rounded rect) */}
+                <rect x="6" y="28" width="38" height="44" rx="10" strokeWidth="2.5" />
+                {/* Right lens frame (rounded rect) */}
+                <rect x="56" y="28" width="38" height="44" rx="10" strokeWidth="2.5" />
+                {/* Bridge */}
+                <path d="M 44 38 Q 50 30, 56 38" strokeWidth="2.5" strokeLinecap="round" />
+                {/* Temple arms */}
+                <line x1="6" y1="36" x2="1" y2="34" strokeWidth="2.5" strokeLinecap="round" />
+                <line x1="94" y1="36" x2="99" y2="34" strokeWidth="2.5" strokeLinecap="round" />
+                {/* ─── S inside left lens (3 stacked bars) ─── */}
+                <g fill={color} stroke="none">
+                    <rect x="14" y="35" width="22" height="5" rx="2.5" />
+                    <rect x="14" y="47" width="22" height="5" rx="2.5" />
+                    <rect x="14" y="59" width="22" height="5" rx="2.5" />
+                    <rect x="14" y="35" width="5" height="17" rx="2.5" />
+                    <rect x="31" y="47" width="5" height="17" rx="2.5" />
+                </g>
+                {/* ─── G inside right lens ─── */}
+                <g fill={color} stroke="none">
+                    <rect x="64" y="35" width="22" height="5" rx="2.5" />
+                    <rect x="64" y="59" width="22" height="5" rx="2.5" />
+                    <rect x="81" y="35" width="5" height="29" rx="2.5" />
+                    <rect x="64" y="47" width="5" height="5" rx="2.5" />
+                    <rect x="64" y="47" width="15" height="5" rx="2.5" />
+                </g>
+            </svg>
+        );
+
+        /* ─── Variant 5: Infinity Lens ─── */
+        const LogoInfinity = ({ color }) => (
+            <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+                <g fill="none" stroke={color} strokeLinecap="round">
+                    <path d="M 30 50 C 30 35, 42 30, 50 42 C 58 30, 70 35, 70 50 C 70 65, 58 70, 50 58 C 42 70, 30 65, 30 50 Z" strokeWidth="3" />
+                    <circle cx="50" cy="50" r="28" strokeWidth="1.5" opacity="0.25" />
+                    <circle cx="50" cy="50" r="3" fill={color} stroke="none" opacity="0.5" />
+                </g>
+            </svg>
+        );
+
+        /* ─── Variant 6: Optical Network ─── */
+        const LogoNetwork = ({ color }) => (
+            <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+                <g fill="none" stroke={color}>
+                    <path d="M 25 50 Q 35 30, 50 50 T 75 50" strokeWidth="1.5" opacity="0.3" />
+                    <path d="M 25 50 Q 35 70, 50 50 T 75 50" strokeWidth="1.5" opacity="0.3" />
+                    <circle cx="25" cy="50" r="4.5" fill={color} stroke="none" />
+                    <circle cx="50" cy="50" r="5.5" fill={color} stroke="none" />
+                    <circle cx="75" cy="50" r="4.5" fill={color} stroke="none" />
+                    <circle cx="35" cy="30" r="2.5" fill={color} stroke="none" opacity="0.4" />
+                    <circle cx="65" cy="30" r="2.5" fill={color} stroke="none" opacity="0.4" />
+                    <circle cx="35" cy="70" r="2.5" fill={color} stroke="none" opacity="0.4" />
+                    <circle cx="65" cy="70" r="2.5" fill={color} stroke="none" opacity="0.4" />
+                </g>
+            </svg>
+        );
+
+        /* ─── Palette data ─── */
+        const PALETTES = [
+            { id: 'navy', label: 'Navy & Gold', primary: '#1A365D', accent: '#D4AF37' },
+            { id: 'teal', label: 'Teal & Slate', primary: '#0EA5E9', accent: '#0F172A' },
+            { id: 'emerald', label: 'Emerald & Amber', primary: '#059669', accent: '#F59E0B' },
+            { id: 'purple', label: 'Purple & Gold', primary: '#7C3AED', accent: '#D4AF37' },
+            { id: 'slate', label: 'Slate & Coral', primary: '#475569', accent: '#FB7185' },
+            { id: 'mono', label: 'Monochrome', primary: '#1A1A1A', accent: '#A3A3A3' },
+        ];
+
+        const FONTS = [
+            { name: 'Playfair Display', class: 'font-serif', weight: '600' },
+            { name: 'Space Grotesk', class: 'font-sans', weight: '600' },
+            { name: 'Inter', class: 'font-sans', weight: '300' },
+            { name: 'DM Sans', class: 'font-sans', weight: '600' },
+            { name: 'Inter', class: 'font-sans', weight: '400' },
+            { name: 'JetBrains Mono', class: 'font-mono', weight: '400' },
+        ];
+
+        const VARIANTS = [
+            {
+                title: 'Concentric Vision',
+                subtitle: 'PURE GEOMETRIC',
+                philosophy: 'The eye as infinite concentric rings. Each layer represents a depth of perception — from outer awareness to inner insight. The gold center is the spark of clarity.',
+                Component: LogoConcentric,
+            },
+            {
+                title: 'Pixel Optics',
+                subtitle: 'DOT MATRIX',
+                philosophy: 'Vision reduced to its digital essence — discrete points forming the universal symbol of sight. Precision through pixels. Structure through simplicity.',
+                Component: LogoPixel,
+            },
+            {
+                title: 'Radiance',
+                subtitle: 'LINE SYSTEM',
+                philosophy: 'Light rays converging through a lens. The intersection of physics and perception — where raw light becomes clear, focused sight.',
+                Component: LogoRadiance,
+            },
+            {
+                title: 'Spectacles Monogram',
+                subtitle: 'SPECTACLES + MONOGRAM',
+                philosophy: 'Two lens frames with S and G built into each lens — the brand initials integrated directly into the spectacles themselves. Every element serves double duty: form is function, letter is lens.',
+                Component: LogoSG,
+            },
+            {
+                title: 'Infinity Lens',
+                subtitle: 'LINES + GEOMETRY',
+                philosophy: 'The infinity symbol within a lens — endless vision without boundaries. Knowledge flows eternally between the guru and the seeker.',
+                Component: LogoInfinity,
+            },
+            {
+                title: 'Optical Network',
+                subtitle: 'NODE NETWORK',
+                philosophy: 'An interconnected system of perception. Each node is a point of clarity, the connections form a network of understanding. Vision as a distributed system.',
+                Component: LogoNetwork,
+            },
+        ];
+
+        /* ─── Main App ─── */
+        const LogoShowcase = () => {
+            const [paletteIdx, setPaletteIdx] = useState(0);
+            const pal = PALETTES[paletteIdx];
+
+            return (
+                <div className="min-h-screen flex flex-col items-center py-16 px-6">
+                    {/* Header */}
+                    <div className="text-center mb-12 max-w-3xl">
+                        <h1 className="text-5xl md:text-7xl font-light tracking-wider mb-4" style={{ fontFamily: 'Playfair Display' }}>
+                            Sri Guru <span className="italic">Optics</span>
+                        </h1>
+                        <p className="font-mono text-xs opacity-40 uppercase tracking-ultra-wide mb-6">
+                            Logo Design Exploration — 6 Variants
+                        </p>
+                        <div className="w-16 h-[1px] bg-black mx-auto opacity-20 mb-6"></div>
+                        <p className="text-sm opacity-60 max-w-lg mx-auto leading-relaxed">
+                            An optical store blending the wisdom of traditional care with the precision of modern optometry. Each variant explores a different visual language.
+                        </p>
+                    </div>
+
+                    {/* Palette Switcher */}
+                    <div className="mb-16">
+                        <p className="font-mono text-[10px] uppercase tracking-ultra-wide text-center opacity-40 mb-4">
+                            Color Palette
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-2">
+                            {PALETTES.map((p, i) => (
+                                <button
+                                    key={p.id}
+                                    onClick={() => setPaletteIdx(i)}
+                                    className={`px-4 py-2 rounded-full text-xs font-medium border transition-all ${
+                                        i === paletteIdx
+                                            ? 'border-black bg-black text-white'
+                                            : 'border-black/10 bg-white text-black/60 hover:border-black/30'
+                                    }`}
+                                >
+                                    <span className="inline-block w-3 h-3 rounded-full mr-2 align-middle" style={{ backgroundColor: p.primary }}></span>
+                                    {p.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Logo Grid */}
+                    <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 mb-24">
+                        {VARIANTS.map((logo, i) => {
+                            const font = FONTS[i];
+                            return (
+                                <div key={i} className="flex flex-col items-center logo-card cursor-pointer">
+                                    {/* Logo Canvas */}
+                                    <div className="w-56 h-56 mb-8 flex items-center justify-center relative">
+                                        <div className="logo-aura"></div>
+                                        <div className="w-28 h-28 relative z-10 logo-canvas">
+                                            <logo.Component color={pal.primary} />
+                                        </div>
+                                    </div>
+
+                                    {/* Text */}
+                                    <div className="text-center w-full px-4">
+                                        <h2 className="text-xl tracking-wider mb-1 uppercase" style={{ fontFamily: font.name, fontWeight: font.weight }}>
+                                            {logo.title}
+                                        </h2>
+                                        <h3 className="text-[10px] font-mono opacity-40 tracking-[0.3em] mb-5">
+                                            {logo.subtitle}
+                                        </h3>
+                                        <p className="text-sm leading-relaxed opacity-60 text-left font-light text-balance">
+                                            {logo.philosophy}
+                                        </p>
+                                    </div>
+
+                                    <div className="divider-line mt-6 mx-auto" style={{ color: pal.primary }}></div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Full Logo Previews (icon + wordmark) */}
+                    <div className="w-full max-w-6xl mb-16">
+                        <p className="font-mono text-[10px] uppercase tracking-ultra-wide text-center opacity-40 mb-8">
+                            Full Logo Lockups
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {VARIANTS.map((logo, i) => {
+                                const font = FONTS[i];
+                                const fg = pal.primary;
+                                const subFg = pal.accent;
+                                return (
+                                    <div key={i} className="flex items-center gap-5 p-5 rounded-xl bg-white border border-black/5 hover:shadow-lg transition-shadow">
+                                        <div className="w-16 h-16 shrink-0">
+                                            <logo.Component color={fg} />
+                                        </div>
+                                        <div className="min-w-0">
+                                            <p className="text-base leading-tight" style={{ fontFamily: font.name, fontWeight: font.weight, color: fg }}>
+                                                SRI GURU
+                                            </p>
+                                            <p className="text-xs tracking-[0.25em] mt-0.5" style={{ fontFamily: font.name, fontWeight: '300', color: subFg }}>
+                                                OPTICS
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Bottom Section: colors & specs */}
+                    <div className="max-w-4xl w-full border-t border-black/5 pt-12">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-xs">
+                            <div>
+                                <p className="font-mono opacity-40 tracking-ultra-wide mb-3">PRIMARY</p>
+                                <div className="flex justify-center gap-3">
+                                    <div className="w-8 h-8 rounded-full border border-black/10" style={{ backgroundColor: pal.primary }}></div>
+                                    <div className="w-8 h-8 rounded-full border border-black/10" style={{ backgroundColor: pal.accent }}></div>
+                                </div>
+                                <p className="font-mono opacity-40 mt-2">{pal.primary} / {pal.accent}</p>
+                            </div>
+                            <div>
+                                <p className="font-mono opacity-40 tracking-ultra-wide mb-3">PRINCIPLES</p>
+                                <p className="opacity-50 leading-relaxed">Extreme Simplicity<br/>Generous Negative Space<br/>Single Focal Point</p>
+                            </div>
+                            <div>
+                                <p className="font-mono opacity-40 tracking-ultra-wide mb-3">FORMATS</p>
+                                <p className="opacity-50 leading-relaxed">SVG (editable)<br/>1024×1024 PNG<br/>Transparent BG</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="mt-24 text-center">
+                        <p className="font-mono text-[10px] opacity-30 uppercase tracking-ultra-wide leading-loose">
+                            Generated with Logo Generator Skill<br/>
+                            Sri Guru Optics — {new Date().getFullYear()}
+                        </p>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<LogoShowcase />, document.getElementById('root'));
+    </script>
+</body>
+</html>
