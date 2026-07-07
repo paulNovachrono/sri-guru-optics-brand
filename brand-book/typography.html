@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Guru Optics — Brand Book | Typography</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+    .nav-link { position: relative; transition: color 0.2s; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { color: #D4AF37; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .card { background: white; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 2rem; transition: box-shadow 0.3s, transform 0.3s; }
+    .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    @media (prefers-color-scheme: dark) {
+      .card { background: #1A1F2E; border-color: rgba(255,255,255,0.06); }
+    }
+  </style>
+</head>
+<body class="bg-[#FAFAFA] dark:bg-[#0F172A] text-gray-900 dark:text-white transition-colors">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0F172A]/80 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 shrink-0">
+          <svg viewBox="0 0 100 100" class="w-8 h-8 fill-none stroke-[#1A365D] dark:stroke-white"><rect x="6" y="28" width="38" height="44" rx="10" strokeWidth="2.5"/><rect x="56" y="28" width="38" height="44" rx="10" strokeWidth="2.5"/><path d="M 44 38 Q 50 30, 56 38" strokeWidth="2.5" strokeLinecap="round"/><line x1="6" y1="36" x2="1" y2="34" strokeWidth="2.5" strokeLinecap="round"/><line x1="94" y1="36" x2="99" y2="34" strokeWidth="2.5" strokeLinecap="round"/><g fill="#1A365D" class="dark:fill-white" stroke="none"><rect x="14" y="35" width="22" height="5" rx="2.5"/><rect x="14" y="47" width="22" height="5" rx="2.5"/><rect x="14" y="59" width="22" height="5" rx="2.5"/><rect x="14" y="35" width="5" height="17" rx="2.5"/><rect x="31" y="47" width="5" height="17" rx="2.5"/><rect x="64" y="35" width="22" height="5" rx="2.5"/><rect x="64" y="59" width="22" height="5" rx="2.5"/><rect x="81" y="35" width="5" height="29" rx="2.5"/><rect x="64" y="47" width="5" height="5" rx="2.5"/><rect x="64" y="47" width="15" height="5" rx="2.5"/></g></svg>
+          <span class="hidden sm:block text-sm font-semibold tracking-wide">Sri Guru Optics</span>
+        </a>
+        <div class="flex items-center gap-4 sm:gap-6 overflow-x-auto text-xs sm:text-sm font-medium">
+          <a href="index.html" class="nav-link whitespace-nowrap">Overview</a>
+          <a href="logo.html" class="nav-link whitespace-nowrap">Logo</a>
+          <a href="colors.html" class="nav-link whitespace-nowrap">Colors</a>
+          <a href="typography.html" class="nav-link active whitespace-nowrap">Typography</a>
+          <a href="voice.html" class="nav-link whitespace-nowrap">Voice</a>
+          <a href="applications.html" class="nav-link whitespace-nowrap">Applications</a>
+          <a href="imagery.html" class="nav-link whitespace-nowrap">Imagery</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="h-16"></div>
+
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-12 text-center fade-in">
+    <span class="inline-block text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium mb-4">Typography Guidelines</span>
+    <h1 class="font-display text-4xl sm:text-5xl font-bold text-[#1A365D] dark:text-white">Typography</h1>
+    <p class="mt-4 text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-sm">Playfair Display for timeless elegance. Inter for modern clarity.</p>
+  </section>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 pb-20 space-y-16">
+
+    <!-- Font Pairing -->
+    <section class="fade-in delay-1">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium">01</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1A365D] dark:text-white mt-2 mb-6">Font Pairing</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="card text-center">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-gray-400 mb-2">Headings</p>
+          <p class="font-display text-4xl text-[#1A365D] dark:text-white font-bold">Playfair Display</p>
+          <p class="text-xs text-gray-400 mt-2">Serif · Weights: 400, 600, 700 · Italic available</p>
+        </div>
+        <div class="card text-center">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-gray-400 mb-2">Body</p>
+          <p class="text-4xl text-[#1A365D] dark:text-white font-normal">Inter</p>
+          <p class="text-xs text-gray-400 mt-2">Sans-serif · Weights: 300, 400, 500, 600, 700, 800</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Type Scale -->
+    <section class="fade-in delay-2">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium">02</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1A365D] dark:text-white mt-2 mb-6">Type Scale</h2>
+      <div class="card">
+        <div class="space-y-6">
+          <div class="flex items-baseline justify-between border-b border-black/5 dark:border-white/5 pb-4">
+            <div><span class="font-display text-5xl text-[#1A365D] dark:text-white font-bold">H1</span><span class="text-xs text-gray-400 ml-3">Display</span></div>
+            <div class="text-right"><span class="text-xs font-mono text-gray-400">48px / 56px</span></div>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-black/5 dark:border-white/5 pb-4">
+            <div><span class="font-display text-4xl text-[#1A365D] dark:text-white font-bold">H2</span><span class="text-xs text-gray-400 ml-3">Section heading</span></div>
+            <div class="text-right"><span class="text-xs font-mono text-gray-400">36px / 44px</span></div>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-black/5 dark:border-white/5 pb-4">
+            <div><span class="font-display text-3xl text-[#1A365D] dark:text-white font-bold">H3</span><span class="text-xs text-gray-400 ml-3">Card heading</span></div>
+            <div class="text-right"><span class="text-xs font-mono text-gray-400">30px / 38px</span></div>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-black/5 dark:border-white/5 pb-4">
+            <div><span class="font-display text-2xl text-[#1A365D] dark:text-white font-bold">H4</span><span class="text-xs text-gray-400 ml-3">Subheading</span></div>
+            <div class="text-right"><span class="text-xs font-mono text-gray-400">24px / 32px</span></div>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-black/5 dark:border-white/5 pb-4">
+            <div><span class="font-display text-xl text-[#1A365D] dark:text-white font-semibold">H5</span><span class="text-xs text-gray-400 ml-3">Small heading</span></div>
+            <div class="text-right"><span class="text-xs font-mono text-gray-400">20px / 28px</span></div>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-black/5 dark:border-white/5 pb-4">
+            <div><span class="text-base text-gray-600 dark:text-gray-300">Body</span><span class="text-xs text-gray-400 ml-3">Paragraph</span></div>
+            <div class="text-right"><span class="text-xs font-mono text-gray-400">16px / 26px</span></div>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-black/5 dark:border-white/5 pb-4">
+            <div><span class="text-sm text-gray-500 dark:text-gray-400">Small</span><span class="text-xs text-gray-400 ml-3">Captions, labels</span></div>
+            <div class="text-right"><span class="text-xs font-mono text-gray-400">14px / 20px</span></div>
+          </div>
+          <div class="flex items-baseline justify-between">
+            <div><span class="text-xs text-gray-400">XS</span><span class="text-xs text-gray-400 ml-3">Legal, meta</span></div>
+            <div class="text-right"><span class="text-xs font-mono text-gray-400">12px / 16px</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="fade-in delay-3">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium">03</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1A365D] dark:text-white mt-2 mb-6">Implementation</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="font-semibold text-sm text-[#1A365D] dark:text-white mb-4">Google Fonts Import</h3>
+          <pre class="text-xs bg-gray-50 dark:bg-black/20 p-4 rounded-xl overflow-x-auto text-gray-600 dark:text-gray-300"><code>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"&gt;</code></pre>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold text-sm text-[#1A365D] dark:text-white mb-4">CSS Variables</h3>
+          <pre class="text-xs bg-gray-50 dark:bg-black/20 p-4 rounded-xl overflow-x-auto text-gray-600 dark:text-gray-300"><code>:root {
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --h1: 3rem/3.5rem var(--font-heading);
+  --h2: 2.25rem/2.75rem var(--font-heading);
+  --body: 1rem/1.625rem var(--font-body);
+}</code></pre>
+        </div>
+        <div class="card sm:col-span-2">
+          <h3 class="font-semibold text-sm text-[#1A365D] dark:text-white mb-4">Tailwind Configuration</h3>
+          <pre class="text-xs bg-gray-50 dark:bg-black/20 p-4 rounded-xl overflow-x-auto text-gray-600 dark:text-gray-300"><code>// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['Playfair Display', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        'display': ['3rem', { lineHeight: '3.5rem', fontWeight: '700' }],
+        'h2': ['2.25rem', { lineHeight: '2.75rem', fontWeight: '700' }],
+      }
+    }
+  }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsive Breakpoints -->
+    <section class="fade-in delay-4">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium">04</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1A365D] dark:text-white mt-2 mb-6">Responsive Breakpoints</h2>
+      <div class="card">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-white/5">
+            <span class="text-sm font-semibold text-[#1A365D] dark:text-white">Desktop</span>
+            <span class="text-xs font-mono text-gray-400">≥ 1024px</span>
+            <span class="text-xs text-gray-500">H1: 48px</span>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-white/5">
+            <span class="text-sm font-semibold text-[#1A365D] dark:text-white">Tablet</span>
+            <span class="text-xs font-mono text-gray-400">768px – 1023px</span>
+            <span class="text-xs text-gray-500">H1: 40px</span>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-white/5">
+            <span class="text-sm font-semibold text-[#1A365D] dark:text-white">Mobile</span>
+            <span class="text-xs font-mono text-gray-400">&lt; 768px</span>
+            <span class="text-xs text-gray-500">H1: 32px</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-black/5 dark:border-white/5 py-8 text-center">
+    <p class="text-[10px] tracking-[0.3em] uppercase text-gray-400 dark:text-gray-600 font-medium">
+      Sri Guru Optics Brand Book v1.0 &middot; Clarity Through Wisdom
+    </p>
+  </footer>
+
+</body>
+</html>

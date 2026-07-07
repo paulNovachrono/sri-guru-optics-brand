@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Guru Optics — Brand Book | Imagery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+    .nav-link { position: relative; transition: color 0.2s; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { color: #D4AF37; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .card { background: white; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 2rem; transition: box-shadow 0.3s, transform 0.3s; }
+    .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .img-placeholder { border-radius: 12px; overflow: hidden; position: relative; }
+    @media (prefers-color-scheme: dark) {
+      .card { background: #1A1F2E; border-color: rgba(255,255,255,0.06); }
+    }
+  </style>
+</head>
+<body class="bg-[#FAFAFA] dark:bg-[#0F172A] text-gray-900 dark:text-white transition-colors">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0F172A]/80 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 shrink-0">
+          <svg viewBox="0 0 100 100" class="w-8 h-8 fill-none stroke-[#1A365D] dark:stroke-white"><rect x="6" y="28" width="38" height="44" rx="10" strokeWidth="2.5"/><rect x="56" y="28" width="38" height="44" rx="10" strokeWidth="2.5"/><path d="M 44 38 Q 50 30, 56 38" strokeWidth="2.5" strokeLinecap="round"/><line x1="6" y1="36" x2="1" y2="34" strokeWidth="2.5" strokeLinecap="round"/><line x1="94" y1="36" x2="99" y2="34" strokeWidth="2.5" strokeLinecap="round"/><g fill="#1A365D" class="dark:fill-white" stroke="none"><rect x="14" y="35" width="22" height="5" rx="2.5"/><rect x="14" y="47" width="22" height="5" rx="2.5"/><rect x="14" y="59" width="22" height="5" rx="2.5"/><rect x="14" y="35" width="5" height="17" rx="2.5"/><rect x="31" y="47" width="5" height="17" rx="2.5"/><rect x="64" y="35" width="22" height="5" rx="2.5"/><rect x="64" y="59" width="22" height="5" rx="2.5"/><rect x="81" y="35" width="5" height="29" rx="2.5"/><rect x="64" y="47" width="5" height="5" rx="2.5"/><rect x="64" y="47" width="15" height="5" rx="2.5"/></g></svg>
+          <span class="hidden sm:block text-sm font-semibold tracking-wide">Sri Guru Optics</span>
+        </a>
+        <div class="flex items-center gap-4 sm:gap-6 overflow-x-auto text-xs sm:text-sm font-medium">
+          <a href="index.html" class="nav-link whitespace-nowrap">Overview</a>
+          <a href="logo.html" class="nav-link whitespace-nowrap">Logo</a>
+          <a href="colors.html" class="nav-link whitespace-nowrap">Colors</a>
+          <a href="typography.html" class="nav-link whitespace-nowrap">Typography</a>
+          <a href="voice.html" class="nav-link whitespace-nowrap">Voice</a>
+          <a href="applications.html" class="nav-link whitespace-nowrap">Applications</a>
+          <a href="imagery.html" class="nav-link active whitespace-nowrap">Imagery</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="h-16"></div>
+
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-12 text-center fade-in">
+    <span class="inline-block text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium mb-4">Imagery Guidelines</span>
+    <h1 class="font-display text-4xl sm:text-5xl font-bold text-[#1A365D] dark:text-white">Imagery &amp; Graphics</h1>
+    <p class="mt-4 text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-sm">Visual language that reinforces clarity, warmth, and professionalism.</p>
+  </section>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 pb-20 space-y-16">
+
+    <!-- Photography Direction -->
+    <section class="fade-in delay-1">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium">01</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1A365D] dark:text-white mt-2 mb-6">Photography Direction</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="img-placeholder" style="background:linear-gradient(135deg, #1A365D 20%, #0EA5E9 80%);min-height:200px" class="flex items-center justify-center">
+          <div class="p-8 text-center">
+            <span class="text-5xl">👤</span>
+            <p class="text-white/80 text-xs mt-2">Warm patient-portrait style</p>
+          </div>
+        </div>
+        <div class="img-placeholder" style="background:linear-gradient(135deg, #1A365D 20%, #D4AF37 80%);min-height:200px" class="flex items-center justify-center">
+          <div class="p-8 text-center">
+            <span class="text-5xl">🔬</span>
+            <p class="text-white/80 text-xs mt-2">Detail shots of equipment</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-4 mt-4">
+        <div class="card text-center">
+          <span class="text-2xl mb-2 block">😊</span>
+          <h3 class="font-semibold text-xs text-[#1A365D] dark:text-white">Genuine Emotion</h3>
+          <p class="text-[10px] text-gray-400 mt-1">Candid smiles, real interactions. No stock-photo stiffness.</p>
+        </div>
+        <div class="card text-center">
+          <span class="text-2xl mb-2 block">💡</span>
+          <h3 class="font-semibold text-xs text-[#1A365D] dark:text-white">Natural Light</h3>
+          <p class="text-[10px] text-gray-400 mt-1">Soft, diffused lighting. Warm tones. Avoid harsh shadows.</p>
+        </div>
+        <div class="card text-center">
+          <span class="text-2xl mb-2 block">🖼️</span>
+          <h3 class="font-semibold text-xs text-[#1A365D] dark:text-white">Clean Backgrounds</h3>
+          <p class="text-[10px] text-gray-400 mt-1">Uncluttered. Let the subject and product breathe.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Icon System -->
+    <section class="fade-in delay-2">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium">02</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1A365D] dark:text-white mt-2 mb-6">Icon System</h2>
+      <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 max-w-2xl">Outline-style icons with consistent stroke weight. Use Deep Navy as default, Teal for hover/active states.</p>
+      <div class="grid grid-cols-4 sm:grid-cols-6 gap-4">
+        <div class="card text-center p-4">
+          <svg class="w-8 h-8 mx-auto stroke-[#1A365D] dark:stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="1.5"><circle cx="12" cy="12" r="3"/><path d="M2 12 Q6 5 12 5 Q18 5 22 12 Q18 19 12 19 Q6 19 2 12Z"/></svg>
+          <p class="text-[9px] text-gray-400 mt-2">Vision</p>
+        </div>
+        <div class="card text-center p-4">
+          <svg class="w-8 h-8 mx-auto stroke-[#1A365D] dark:stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg>
+          <p class="text-[9px] text-gray-400 mt-2">Eyeglasses</p>
+        </div>
+        <div class="card text-center p-4">
+          <svg class="w-8 h-8 mx-auto stroke-[#1A365D] dark:stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <p class="text-[9px] text-gray-400 mt-2">Time</p>
+        </div>
+        <div class="card text-center p-4">
+          <svg class="w-8 h-8 mx-auto stroke-[#1A365D] dark:stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <p class="text-[9px] text-gray-400 mt-2">Heart</p>
+        </div>
+        <div class="card text-center p-4">
+          <svg class="w-8 h-8 mx-auto stroke-[#1A365D] dark:stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <p class="text-[9px] text-gray-400 mt-2">Prescription</p>
+        </div>
+        <div class="card text-center p-4">
+          <svg class="w-8 h-8 mx-auto stroke-[#1A365D] dark:stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <p class="text-[9px] text-gray-400 mt-2">Shield</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Pattern -->
+    <section class="fade-in delay-3">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium">03</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1A365D] dark:text-white mt-2 mb-6">Brand Pattern</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="card p-0 overflow-hidden">
+          <div style="background:#1A365D;min-height:180px" class="relative">
+            <svg viewBox="0 0 200 120" class="w-full h-full opacity-20">
+              <defs>
+                <pattern id="lenses" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <rect x="4" y="10" width="16" height="20" rx="5" fill="none" stroke="white" strokeWidth="1"/>
+                  <rect x="22" y="10" width="16" height="20" rx="5" fill="none" stroke="white" strokeWidth="1"/>
+                  <path d="M 20 15 Q 21 13, 22 15" fill="none" stroke="white" strokeWidth="0.8"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#lenses)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center">
+          <h3 class="font-semibold text-sm text-[#1A365D] dark:text-white mb-2">Subtle Spectacle Pattern</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">A repeating micro-pattern of the spectacles icon, used as a watermark on packaging, website backgrounds, and stationery. Always rendered at 20% opacity over Deep Navy or as a subtle tone-on-tone effect on light backgrounds.</p>
+          <p class="text-xs text-gray-400 mt-3"><span class="font-semibold">Usage:</span> Gift boxes, tissue paper, website hero backgrounds, envelope liners.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Do's & Don'ts -->
+    <section class="fade-in delay-4">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] font-medium">04</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1A365D] dark:text-white mt-2 mb-6">Image Guidelines</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="text-sm font-semibold text-green-600 mb-4 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span>Do</h3>
+          <ul class="space-y-3 text-xs text-gray-600 dark:text-gray-300">
+            <li class="flex gap-2"><span class="text-green-500 shrink-0">✓</span>Show real people in genuine interactions</li>
+            <li class="flex gap-2"><span class="text-green-500 shrink-0">✓</span>Use warm, natural lighting with soft contrast</li>
+            <li class="flex gap-2"><span class="text-green-500 shrink-0">✓</span>Include context — a person using their glasses, reading, working</li>
+            <li class="flex gap-2"><span class="text-green-500 shrink-0">✓</span>Frame close-ups of glasses with shallow depth of field</li>
+            <li class="flex gap-2"><span class="text-green-500 shrink-0">✓</span>Use the brand color palette as a colour grading guide</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="text-sm font-semibold text-red-500 mb-4 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500"></span>Don't</h3>
+          <ul class="space-y-3 text-xs text-gray-600 dark:text-gray-300">
+            <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span>Use overly staged or clearly stock photography</li>
+            <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span>Crop faces awkwardly — respect the person in the frame</li>
+            <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span>Apply heavy filters or unrealistic colour grading</li>
+            <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span>Show dirty or scratched glasses in product shots</li>
+            <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span>Use images that feel cold, clinical, or intimidating</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-black/5 dark:border-white/5 py-8 text-center">
+    <p class="text-[10px] tracking-[0.3em] uppercase text-gray-400 dark:text-gray-600 font-medium">
+      Sri Guru Optics Brand Book v1.0 &middot; Clarity Through Wisdom
+    </p>
+  </footer>
+
+</body>
+</html>
